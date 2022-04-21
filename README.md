@@ -1,4 +1,2 @@
 # cs103a-cpa02
-.DS_Store
-node_modules
-*~
+This is my CPA3 Project

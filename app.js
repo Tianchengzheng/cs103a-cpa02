@@ -18,7 +18,7 @@ const layouts = require("express-ejs-layouts");
 // *********************************************************** //
 //  Loading models
 // *********************************************************** //
-const ToDoItem = require("./models/ToDoItem")
+// const ToDoItem = require("./models/ToDoItem")
 const Computer = require('./models/Computer')
 
 // *********************************************************** //
@@ -33,7 +33,9 @@ const computers = require('./public/data/computers.json')
 
 const mongoose = require( 'mongoose' );
 //const mongodb_URI = 'mongodb://localhost:27017/cs103a_todo'
-const mongodb_URI = 'mongodb+srv://tiancheng:Ztc@20010508@cluster0.epla1.mongodb.net/test'
+const dotenv = require("dotenv");
+dotenv.config();
+const mongodb_URI = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.epla1.mongodb.net/test`
 
 mongoose.connect( mongodb_URI, { useNewUrlParser: true, useUnifiedTopology: true } );
 // fix deprecation warnings
@@ -116,7 +118,7 @@ app.get("/about", (req, res, next) => {
 
 /*
     ToDoList routes
-*/
+
 app.get('/todo',
   isLoggedIn,   // redirect to /login if user is not logged in
   async (req,res,next) => {
@@ -174,6 +176,7 @@ app.get('/todo',
     }
   }
 )
+*/
 
 /* ************************
   Functions needed for the course finder routes

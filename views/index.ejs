@@ -1,0 +1,42 @@
+<style>
+    p {text-align: center;}
+    div {text-align: center;}
+</style>
+
+    <div class="jumbotron">
+        <h1>PA03: Computer Analysis </h1>
+        <p></p>
+    </div>
+
+    <p class="p-3 m-3 border border-primary bg-light">
+        The goal of this assignment is to write an app that will let
+        students analyze and compare different computers.
+    </p>
+    
+    <% if (true || loggedIn) {%>  
+        <form method="post" action="/computers/byBrand">
+            Show Computers by Brand: 
+              <input type="text" name="brand" 
+                     placeholder="e.g. ASUS">
+            <input type="submit">
+        </form>
+        <br>
+        <form method="post" action="/computers/byModel">
+            Show Computers by Model: 
+            <input type="text" name="model" 
+                   placeholder="e.g. INSPIRON">
+            <input type="submit">
+        </form>
+        <br>
+        <form method="post" action="/computers/byProcessorBrand">
+            Show Computers by Processor Brand: 
+              <input type="text" name="processor_brand" 
+                     placeholder="e.g. AMD">
+            <input type="submit">
+        </form>
+        <br>
+
+        <img src = "/images/computer.jpg" width = "250" height = "200" alt = "Modern Computer">
+    <% } %>
+
+

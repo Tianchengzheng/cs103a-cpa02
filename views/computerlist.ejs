@@ -1,0 +1,45 @@
+<h1>The computers are</h1>
+Here is a list with the brand, model, processor brand, amount of ram, price, and rating. Click "Specifications" for more details regarding each computer.
+<hr>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Processor Brand</th>
+            <th>RAM</th>
+            <th>Price ($)</th>
+            <th>Rating</th>
+            <th>Extra </th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+    <% for (computer of computers) {
+        const brand = computer['brand'];
+        const model = computer['model'];
+        const pb = computer['processor_brand'];
+        const ram = computer['ram_gb'];
+        const price = (parseInt(computer['latest_price'])/100).toFixed(2);
+        const rating = computer['star_rating'];
+         %>
+      <tr class="mb-2"> 
+        <td> <%=brand %></td>
+        <td> <%=model %></td>
+        <td> <%=pb %></td>
+        <td> <%=ram %></td>
+        <td> <%=price %></td>
+        <td> <%=rating %></td>
+        <td>
+            <a href = "/computer/detail/<%= model%>" method = "get" action = "/computer/detail/model">
+                
+                <%= "Specifications"%>
+            </a>
+        </td>
+    </tr>
+
+    <% } %>
+    </tbody>
+</table>
+
+<pre>
+</pre>

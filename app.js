@@ -315,7 +315,8 @@ app.use(function(err, req, res, next) {
 //  Starting up the server!
 // *********************************************************** //
 //Here we set the port to use between 1024 and 65535  (2^16-1)
-const port = "4999";
+const port = process.env.port || "4999";
+console.log('connecting on port' + port)
 app.set("port", port);
 
 // and now we startup the server listening on that port

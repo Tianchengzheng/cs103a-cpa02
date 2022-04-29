@@ -33,8 +33,6 @@ const computers = require('./public/data/computers.json')
 
 const mongoose = require( 'mongoose' );
 //const mongodb_URI = 'mongodb://localhost:27017/cs103a_todo'
-const dotenv = require("dotenv");
-dotenv.config();
 const mongodb_URI = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.epla1.mongodb.net/test`
 
 mongoose.connect( mongodb_URI, { useNewUrlParser: true, useUnifiedTopology: true } );

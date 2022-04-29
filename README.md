@@ -19,6 +19,7 @@ Photos below show the app running.
 
 
 ## Installation
+Clone the repository from the url.
 Download the project from github and download nodejs and npm from https://nodejs.org
 and cd into the folder
 

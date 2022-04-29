@@ -33,6 +33,7 @@ const computers = require('./public/data/computers.json')
 
 const mongoose = require( 'mongoose' );
 //const mongodb_URI = 'mongodb://localhost:27017/cs103a_todo'
+const dotenv = require('dotenv').config();
 const mongodb_URI = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.epla1.mongodb.net/test`
 
 mongoose.connect( mongodb_URI, { useNewUrlParser: true, useUnifiedTopology: true } );
@@ -315,7 +316,7 @@ app.use(function(err, req, res, next) {
 //  Starting up the server!
 // *********************************************************** //
 //Here we set the port to use between 1024 and 65535  (2^16-1)
-const port = process.env.port || "5000";
+const port = process.env.PORT || "5000";
 console.log('connecting on port' + port)
 app.set("port", port);
 
